@@ -16,23 +16,22 @@ module.exports = {
     bundle: [
       resolve(__dirname, 'src/index.js'),
       resolve(__dirname, 'src/assets/scss/index.scss'),
-    ],
-    vendor: [
-      'react',
-      'react-dom'
     ]
+    // vendor: [
+    //   'react',
+    //   'react-dom'
+    // ]
   },
   output: {
     path: resolve(__dirname, 'dist'),
-    filename: '[name].js',
-    publicPath: 'dist/'
+    filename: '[name].js'
   },
   module: {
     loaders: [
       // JavaScript modules
       {
         loader: 'babel-loader',
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         query: {
           presets: [ 'react', 'es2015' ]
@@ -93,7 +92,7 @@ module.exports = {
       inject: true
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor'
+      names: ['vendor', 'manifest']
     }),
   //   new webpack.optimize.UglifyJsPlugin({
   //     compress: {

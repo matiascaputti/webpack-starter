@@ -1,5 +1,4 @@
-
-
+# Webpack & Webpack-dev-server
 
 ### libpng issues
 
@@ -13,13 +12,7 @@ This can be remedied by installing the newest version of libpng with [homebrew](
 brew install libpng
 ```
 
-
 ### Starting
 
 `npm start`
 `npm run build`
-
-
-
-"babel-preset-react-hmre": "^1.1.1",
-"react-hot-loader": "^1.3.1"
