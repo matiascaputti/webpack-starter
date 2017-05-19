@@ -1,9 +1,9 @@
-import { Component } from "react";
+import React from "react";
 import image1 from '../assets/images/8420490.png';
 import image2 from '../assets/images/166921.jpeg';
 import Font from '../assets/fonts/Billabong-Regular.ttf';
 
-class App extends Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { counter: 0 };

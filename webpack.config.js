@@ -16,11 +16,11 @@ module.exports = {
     bundle: [
       resolve(__dirname, 'src/index.js'),
       resolve(__dirname, 'src/assets/scss/index.scss'),
+    ],
+    vendor: [
+      'react',
+      'react-dom'
     ]
-    // vendor: [
-    //   'react',
-    //   'react-dom'
-    // ]
   },
   output: {
     path: resolve(__dirname, 'dist'),
