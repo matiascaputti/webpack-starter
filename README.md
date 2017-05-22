@@ -12,7 +12,10 @@ This can be remedied by installing the newest version of libpng with [homebrew](
 brew install libpng
 ```
 
-### Starting
+### Development server
 
 `npm start`
+
+### Build for production
+
 `npm run build`

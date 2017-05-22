@@ -5,10 +5,10 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 function getDevTool() {
     if (process.env.NODE_ENV !== 'production') {
-        return 'source-map';
+        return 'eval-source-map';
     }
 
-    return false;
+    return 'source-map';
 }
 
 module.exports = {
@@ -93,12 +93,11 @@ module.exports = {
     }),
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor', 'manifest']
-    }),
+    })
   ],
   devServer: {
     open: true,
     contentBase: 'dist/',
-    compress: true,
     inline: true,
     hot: true,
     port: 8000
