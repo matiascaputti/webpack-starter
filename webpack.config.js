@@ -15,7 +15,7 @@ module.exports = {
   entry: {
     bundle: [
       resolve(__dirname, 'src/index.js'),
-      resolve(__dirname, 'src/assets/scss/index.scss'),
+      resolve(__dirname, 'src/assets/scss/index.scss')
     ],
     vendor: [
       'react',
@@ -80,7 +80,7 @@ module.exports = {
     extensions: ['.js', '.jsx', '.json']
   },
   plugins: [
-  //   new webpack.HotModuleReplacementPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin({
       filename: 'assets/styles/[name].css',
       disable: false,
@@ -94,18 +94,14 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor', 'manifest']
     }),
-  //   new webpack.optimize.UglifyJsPlugin({
-  //     compress: {
-  //       warnings: false,
-  //       drop_console: false,
-  //     }
-  //   })
   ],
-  // devServer: {
-  //   compress: true,
-  //   inline: true,
-  //   hot: true,
-  //   port: 8000
-  // },
+  devServer: {
+    open: true,
+    contentBase: 'dist/',
+    compress: true,
+    inline: true,
+    hot: true,
+    port: 8000
+  },
   devtool: getDevTool(),
 }
