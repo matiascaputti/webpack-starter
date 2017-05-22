@@ -34,7 +34,7 @@ class App extends React.Component {
         <h1 style={{color: 'red'}}>
           React + Webpack starter
         </h1>
-        
+
         <h3>{counter}</h3>
 
         <img src={image1} />

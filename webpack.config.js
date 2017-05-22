@@ -27,20 +27,22 @@ module.exports = {
     filename: '[name].js'
   },
   module: {
-    loaders: [
+    rules: [
       // JavaScript modules
       {
-        loader: 'babel-loader',
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [ 'react', 'es2015' ]
+          }
+        },
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        query: {
-          presets: [ 'react', 'es2015' ]
-        }
       },
 
       // Styles
       {
-        loader: ExtractTextPlugin.extract({
+        use: ExtractTextPlugin.extract({
           loader: ['css-loader', 'sass-loader']
         }),
         test: /\.(scss|css)$/
@@ -48,7 +50,7 @@ module.exports = {
 
       // Images
       {
-        loader: [
+        use: [
           {
             loader: 'url-loader',
             options: {
@@ -63,7 +65,7 @@ module.exports = {
 
       // Fonts
       {
-        loader: [
+        use: [
           {
             loader: 'url-loader',
             options: {
