@@ -1,4 +1,4 @@
-# Webpack & Webpack-dev-server
+# Webpack & Webpack-dev-server
 
 ### libpng issues
 
